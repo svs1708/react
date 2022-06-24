@@ -1,12 +1,23 @@
 import React from "react";
 import { useContext } from "react"
 import CartContext from "../../../store/cart-context";
+import Card from "../../UI/Card";
 import classes from "./MealItem.module.css";
 import MealItemForm from "./MealItemForm";
 
 const MealItem = (props) => {
     const cartCtx = useContext(CartContext)
-    const AddToCartHandler =(amount)=>{
+    const AddToCartHandler = async(amount)=>{
+    //   const res = await fetch("https://food-app-f122c-default-rtdb.firebaseio.com/cart.json",{
+    //     method : "POST",
+    //     body : JSON.stringify({
+    //       id : props.id,
+    //       name : props.name,
+    //       amount : amount,
+    //       price : props.price
+    //     })
+    // })
+    // console.log(res)
         cartCtx.addItem({
             id : props.id,
             name : props.name,
@@ -17,14 +28,19 @@ const MealItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
   return (
     <li className={classes.meal}>
-      <div >
+      <Card>
+      <div className={classes.mealCard} >
+        <div className={classes.mealimg}>
+          <img src={props.imglink} alt = {props.imglink}/>
+        </div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
         <div className={classes.price}>{price}</div>
-      </div>
-      <div>
+        <div>
            <MealItemForm onAddToCart= {AddToCartHandler} />
       </div>
+      </div>
+      </Card>
     </li>
   );
 };

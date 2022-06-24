@@ -1,3 +1,18 @@
+.button {
+    color: #8a2b06;
+    background-color: bisque;
+    border: none;
+    height: 2rem;
+    width:  2rem;
+    cursor: pointer;
+    
+
+    
+}
+.button:hover{
+ background-color: blanchedalmond;
+}
+
 .form {
     text-align: center;
   }
@@ -17,4 +32,8 @@
   .form button:active {
     background-color: #641e03;
     border-color: #641e03;
+  }
+
+  .addmealforminput{
+      margin-bottom: 1rem;
   }

@@ -1,15 +1,31 @@
 .meal {
-    display: flex;
-    justify-content: space-between;
+    display:flex;
+    justify-content:center;
     margin: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
+    padding: 2rem 5rem 2rem 5rem;
+    /* border-bottom: 1px solid #ccc; */
+    text-align: center;
+    align-items: center;
+    margin-bottom: 1rem;
   }
   
   .meal h3 {
     margin: 0 0 0.25rem 0;
   }
+
+  .mealimg {
+    display: block;
+    height: 150px;
+    width: 250px;
+  }
   
+  .mealimg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  
+  }
   .description {
     font-style: italic;
   }
@@ -20,3 +36,11 @@
     color: #ad5502;
     font-size: 1.25rem;
   }
+li {
+  text-align: center;
+  max-width: 50rem;
+  width: 90%;
+}
+.mealCard{
+  padding: 2rem 8rem;
+}
